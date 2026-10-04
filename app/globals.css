@@ -46,17 +46,33 @@ body {
   }
 }
 
+embla {
+  max-width: 48rem;
+  margin: auto;
+
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 45%;
+}
+
 .embla__viewport {
   overflow: hidden;
 }
 
 .embla__container {
   display: flex;
-  gap: 60px;
+  margin-left: calc(1rem * -1);
   touch-action: pan-y pinch-zoom;
 }
 
-.embla__slide {
-  flex: 0 0 100%;
+/* .embla__slide {
+  flex: 0 0 auto;
   min-width: 0;
+} */
+
+.embla__slide {
+  flex: 0 0 20%;
+  transform: translate3d(0, 0, 0);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
 }

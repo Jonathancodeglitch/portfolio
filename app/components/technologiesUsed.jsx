@@ -24,12 +24,13 @@ const technologies = [
 ];
 
 export default function TechnologiesUsedSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, }, [
     AutoScroll({
       delay: 1000,
       jump: false,
       stopOnInteraction: false,
       speed: 1,
+      direction: "backward",
     }),
   ]);
 
@@ -48,22 +49,21 @@ export default function TechnologiesUsedSection() {
       </h4>
       <div className="embla mt-[50px]">
         <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container">
+          <div className="embla__container mt-15">
             {technologies.map((technology) => {
               return (
-                <div
-                  className="flex flex-col items-center justify-center   embla__slide  max-w-25"
-                  key={technology.label}
-                >
-                  <div className="border-1 border-[#383838] px-6 py-3 ml-[8px]   rounded-md w-full  h-[100px] flex items-center justify-center">
-                    <Image
-                      width={48}
-                      height={48}
-                      src={technology.image}
-                      alt={technology.label + " logo"}
-                    />
+                <div key={technology.label} className="embla__slide ">
+                  <div className="flex flex-col items-center justify-center max-w-25">
+                    <div className="border-1 border-[#383838] px-6 py-3  rounded-md w-full  h-[100px] flex items-center justify-center">
+                      <Image
+                        width={48}
+                        height={48}
+                        src={technology.image}
+                        alt={technology.label + " logo"}
+                      />
+                    </div>
+                    <span>{technology.label}</span>
                   </div>
-                  <span>{technology.label}</span>
                 </div>
               );
             })}
