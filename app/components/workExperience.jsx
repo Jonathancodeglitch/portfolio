@@ -10,8 +10,8 @@ const experiences = [
   },
   {
     id: 2,
-    company: "Company Name",
-    role: "Your Role",
+    company: "Netwalkers Ng",
+    role: "Frontend engineer",
     start: "Apr 2020",
     end: "Oct 2021",
   },

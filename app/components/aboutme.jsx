@@ -10,17 +10,18 @@ export default function AboutSection() {
         {/* about me desc */}
         <div className=" flex flex-col gap-8 lg:w-[50%]">
           <p className="text-[20px] font-semibold">
-            Hi there! I'm Jonathan Ohwevwo. My first JavaScript game was rock
-            paper scissors, built with nothing but prompts and the browser
-            console, and I was instantly hooked. I loved that I could take an
-            idea from my head and turn it into something real on a screen, just
-            by learning to speak the computer's language.
+            Hi there! I'm Jonathan. Let me tell you a bit about how it all
+            started, From the moment I made my first javascript game (rock paper
+            scissor) with the prompt method and the web console tool I knew I
+            was hooked into the word of software development.
           </p>
 
           <p className="text-[20px] font-semibold">
-            That simple game turned into a career. Today I build fast, reliable
-            software, and I'm still just as excited to learn something new on
-            every project.
+            I felt sublime like I could bring my imaginations into reality in a
+            computer by understanding it and making it understand me, what
+            started as a simple javascript game has become a full-fledged
+            passion that offers an engaging challenge to continually learn and
+            improve my skills in creating high quality code.
           </p>
           {/* action btn */}
           <div className="flex items-center gap-4">
