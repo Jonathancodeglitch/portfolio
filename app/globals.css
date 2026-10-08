@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --slide-height: 19rem;
+  --slide-spacing: 30px;
+  --slide-size: 45%;
 }
 
 @theme inline {
@@ -49,10 +52,6 @@ body {
 embla {
   max-width: 48rem;
   margin: auto;
-
-  --slide-height: 19rem;
-  --slide-spacing: 1rem;
-  --slide-size: 45%;
 }
 
 .embla__viewport {
@@ -61,17 +60,13 @@ embla {
 
 .embla__container {
   display: flex;
-  margin-left: calc(1rem * -1);
+  margin-left: calc(var(--slide-spacing) * -1);
   touch-action: pan-y pinch-zoom;
 }
 
-/* .embla__slide {
-  flex: 0 0 auto;
-  min-width: 0;
-} */
-
 .embla__slide {
-  flex: 0 0 20%;
+  flex: 0 0 180px;
+  height: 180px;
   transform: translate3d(0, 0, 0);
   min-width: 0;
   padding-left: var(--slide-spacing);

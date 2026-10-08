@@ -2,7 +2,7 @@ import { MoveUpRight, Dot } from "lucide-react";
 
 export default function SelectedWork() {
   return (
-    <section className="mt-[40px] sm:mt-[60px] lg:mt-[100px]  capitalize font-bold">
+    <section  id="projects" className="scroll-mt-28  mt-[40px] sm:mt-[60px] lg:mt-[100px]  capitalize font-bold">
       <h1 className="text-[40px] lg:text-[48px] border-b border-[#383838] py-2">
         Selected works
       </h1>

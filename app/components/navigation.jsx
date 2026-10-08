@@ -2,11 +2,12 @@
 import Conatiner from "@/app/components/conatainer";
 import { X, Menu, LineDotLeftHorizontal } from "lucide-react";
 import { useState, useRef } from "react";
+import { scrollToSection } from "@/app/components/utility";
 import Link from "next/link";
 
 export default function Navigation() {
   const [menu, setMenu] = useState(false);
-  const [menuNavigationHeight, setMenuNavigationHeight] = useState(null);
+
   const menuNavigationRef = useRef(null);
 
   function handleMenuToggle() {
@@ -29,8 +30,8 @@ export default function Navigation() {
               onClick={handleMenuToggle}
               className="flex items-center justify-center lg:hidden"
             >
-              <X className="hidden" />
-              <Menu />
+              {menu && <X />}
+              {!menu && <Menu />}
             </button>
           </div>
 
@@ -45,19 +46,54 @@ export default function Navigation() {
             <div ref={menuNavigationRef} className="lg:contents">
               {/* Links (center column) */}
               <ul className="ml-[15px] lg:text-[18px] lg:ml-0 flex flex-col gap-4 lg:flex-row lg:gap-8">
-                <Link href="#">Home</Link>
-                <Link href="#">Projects</Link>
-                <Link href="#">About</Link>
-                <Link href="#">Resume</Link>
+                <Link
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("/");
+                    setMenu(false);
+                  }}
+                  href="/"
+                >
+                  Home
+                </Link>
+                <Link
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("projects");
+                    setMenu(false);
+                  }}
+                  href="/#projects"
+                >
+                  Projects
+                </Link>
+                <Link
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("about");
+                    setMenu(false);
+                  }}
+                  href="/#about"
+                >
+                  About
+                </Link>
+                <a
+                  href="https://drive.google.com/file/d/1qwPiIrAFUZsrrAp5XVkc8CpkSAw2O3cQ/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Resume
+                </a>
               </ul>
 
               {/* Contact button (right column) */}
-              <Link
-                href="#"
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=ohwevwojonathan@gmail.com&su=Project%20inquiry"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block text-center lg:text-[18px] cursor-pointer w-full lg:w-fit lg:justify-self-end bg-[#1A1A1A] py-3 px-5 mt-5 lg:mt-0 rounded-md border border-[#383838]"
               >
                 Contact
-              </Link>
+              </a>
             </div>
           </div>
         </div>
