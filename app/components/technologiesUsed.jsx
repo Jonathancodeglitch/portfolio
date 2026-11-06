@@ -2,25 +2,36 @@
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect } from "react";
-import Image from "next/image";
 import AutoScroll from "embla-carousel-auto-scroll";
+import {
+  SiReact,
+  SiTailwindcss,
+  SiJavascript,
+  SiTypescript,
+  SiPython,
+  SiNodedotjs,
+  SiExpress,
+  SiPostgresql,
+  SiWordpress,
+  SiGithub,
+  SiVercel,
+} from "react-icons/si";
+import { TbSql } from "react-icons/tb";
 
+// Brand colours; black brand marks (Express, GitHub, Vercel) use white so they show on the dark background
 const technologies = [
-  { image: `/image/react.png`, label: "React" },
-  {
-    image: "/image/react.png",
-    label: "Tailwind CSS",
-  },
-  { image: `/image/javascript_js.png`, label: "JavaScript" },
-  { image: `/image/typescript_logo.svg`, label: "TypeScript" },
-  { image: `/image/python-logo-notext.svg.webp`, label: "Python" },
-  { image: `/image/node-logo.png`, label: "Node.js" },
-  { image: `/image/express-logo.png`, label: "Express" },
-  { image: `/image/postgres-logo.png`, label: "PostgreSQL" },
-  { image: "/image/sql.png", label: "SQL" },
-  { image: `/image/wordpress-logo.png`, label: "WordPress" },
-  { image: `/image/github.png`, label: "GitHub" },
-  { image: `/image/vercel.png`, label: "Vercel" },
+  { Icon: SiReact, color: "#61DAFB", label: "React" },
+  { Icon: SiTailwindcss, color: "#06B6D4", label: "Tailwind CSS" },
+  { Icon: SiJavascript, color: "#F7DF1E", label: "JavaScript" },
+  { Icon: SiTypescript, color: "#3178C6", label: "TypeScript" },
+  { Icon: SiPython, color: "#3776AB", label: "Python" },
+  { Icon: SiNodedotjs, color: "#5FA04E", label: "Node.js" },
+  { Icon: SiExpress, color: "#FFFFFF", label: "Express" },
+  { Icon: SiPostgresql, color: "#4169E1", label: "PostgreSQL" },
+  { Icon: TbSql, color: "#FAB12F", label: "SQL" },
+  { Icon: SiWordpress, color: "#21759B", label: "WordPress" },
+  { Icon: SiGithub, color: "#FFFFFF", label: "GitHub" },
+  { Icon: SiVercel, color: "#FFFFFF", label: "Vercel" },
 ];
 
 export default function TechnologiesUsedSection() {
@@ -50,19 +61,12 @@ export default function TechnologiesUsedSection() {
       <div className="embla mt-[50px]">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container mt-15">
-            {technologies.map((technology) => {
+            {technologies.map(({ Icon, color, label }) => {
               return (
-                <div key={technology.label} className="embla__slide">
-                  <div
-                    className="flex h-full w-full flex-col items-center justify-center  border border-[#383838]   rounded-md w-full  "
-                  >
-                    <Image
-                      width={48}
-                      height={48}
-                      src={technology.image}
-                      alt={technology.label + " logo"}
-                    />
-                    <span className="text-sm mt-2">{technology.label}</span>
+                <div key={label} className="embla__slide">
+                  <div className="flex h-full w-full flex-col items-center justify-center border border-[#383838] rounded-md">
+                    <Icon size={48} color={color} aria-hidden="true" />
+                    <span className="text-sm mt-2">{label}</span>
                   </div>
                 </div>
               );

@@ -11,7 +11,7 @@ export default function Footer() {
         <ul className="flex flex-col gap-4">
           <a href="https://x.com/_codeGlitch">X(twitter)</a>
           <a href="https://github.com/Jonathancodeglitch">Github</a>
-          <a href="www.linkedin.com/in/jonathan-ohwevwo-9a30a826b">Linkedln</a>
+          <a href="https://www.linkedin.com/in/jonathan-ohwevwo-9a30a826b">LinkedIn</a>
           <a href="https://www.instagram.com/_jonathan_kendrick?stkn=NHJzcjl0OG82c3pt">
             Instagram
           </a>

@@ -5,15 +5,15 @@ const experiences = [
     id: 1,
     company: "Brinicon Ltd",
     role: "Full Stack Developer",
-    start: "Mar 2022",
+    start: "Mar 2025",
     end: "Now",
   },
   {
     id: 2,
     company: "Netwalkers Ng",
     role: "Frontend engineer",
-    start: "Apr 2020",
-    end: "Oct 2021",
+    start: "Apr 2023",
+    end: "Oct 2024",
   },
 ];
 
